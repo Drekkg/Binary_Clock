@@ -136,446 +136,94 @@
         return hours, minutes, seconds;
       }
 
-      // function convertToBinary(num) {
-      //   if (num === "0") {
-      //     value = "0000";
-      //   } else if (num === "1") {
-      //     value = "0001";
-      //   } else if (num === "2") {
-      //     value = "0010";
-      //   } else if (num === "3") {
-      //     value = "0011";
-          
-      //   } else if (num === "4") {
-      //     value = "0100";
-      //   } else if (num === "5") {
-      //     value = "0101";
-          
-      //   } else if (num === "6") {
-      //     value = "0110";
-      //   } else if (num === "7") {
-      //     value = "0111";
-      //   } else if (num === "8") {
-      //     value = "1000";
-      //   } else if (num === "9") {
-      //     value = "1001";
-      //   }
-      // return value;
-      // }
+     
       function convertToBinary(num){
         var binArray = ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001"];
         value = binArray[num];
       }
 
       getTime();
+
+      var colorMapping = {
+    "0000": ["gray", "gray", "gray", "gray"],
+    "0001": ["gray", "gray", "gray", "red"],
+    "0010": ["gray", "gray", "red", "gray"],
+    "0011": ["gray", "gray", "red", "red"],
+    "0100": ["gray", "red", "gray", "gray"],
+    "0101": ["gray", "red", "gray", "red"],
+    "0110": ["gray", "red", "red", "gray"],
+    "0111": ["gray", "red", "red", "red"],
+    "1000": ["red", "gray", "gray", "gray"],
+    "1001": ["red", "gray", "gray", "red"],
+    // Add more mappings as needed
+};
     
         convertToBinary(seconds[0]);
         fifthValue = value;
-
-        if (fifthValue === "0000") {
-        document.getElementById("dash17").style.setProperty("background-color", "gray");
-        document.getElementById("dash18").style.setProperty("background-color", "gray");
-        document.getElementById("dash19").style.setProperty("background-color", "gray");
-        document.getElementById("dash20").style.setProperty("background-color", "gray");
-      }
-       else if (fifthValue === "0001") {      
-        document.getElementById("dash17").style.setProperty("background-color", "gray");
-        document.getElementById("dash18").style.setProperty("background-color", "gray");
-        document.getElementById("dash19").style.setProperty("background-color", "gray");
-        document.getElementById("dash20").style.setProperty("background-color", "red");
-      } 
-      else if (fifthValue === "0010") {       
-        document.getElementById("dash17").style.setProperty("background-color", "gray");
-        document.getElementById("dash18").style.setProperty("background-color", "gray");
-        document.getElementById("dash19").style.setProperty("background-color", "red");
-        document.getElementById("dash20").style.setProperty("background-color", "gray");
-      } 
-      else if (fifthValue === "0011") {  
-        document.getElementById("dash17").style.setProperty("background-color", "gray");
-        document.getElementById("dash18").style.setProperty("background-color", "gray");
-        document.getElementById("dash19").style.setProperty("background-color", "red");
-        document.getElementById("dash20").style.setProperty("background-color", "red");     
+        if (colorMapping.hasOwnProperty(fifthValue)) {
+    var colors = colorMapping[fifthValue];
+    for (var i = 0; i < 4; i++) {
+        document.getElementById("dash" + (17 + i)).style.setProperty("background-color", colors[i]);
         
-      } else if (fifthValue === "0100") {
-        document.getElementById("dash17").style.setProperty("background-color", "gray");
-        document.getElementById("dash18").style.setProperty("background-color", "red");
-        document.getElementById("dash19").style.setProperty("background-color", "gray");
-        document.getElementById("dash20").style.setProperty("background-color", "gray");
     }
-    else if (fifthValue === "0101") {
-        document.getElementById("dash17").style.setProperty("background-color", "gray");
-        document.getElementById("dash18").style.setProperty("background-color", "red");
-        document.getElementById("dash19").style.setProperty("background-color", "gray");
-        document.getElementById("dash20").style.setProperty("background-color", "red");
-    }
-    else if (fifthValue === "0110") {
-        document.getElementById("dash17").style.setProperty("background-color", "gray");
-        document.getElementById("dash18").style.setProperty("background-color", "red");
-        document.getElementById("dash19").style.setProperty("background-color", "red");
-        document.getElementById("dash20").style.setProperty("background-color", "gray");
-    }
-    else if (fifthValue === "0111") {
-        document.getElementById("dash17").style.setProperty("background-color", "gray");
-        document.getElementById("dash18").style.setProperty("background-color", "red");
-        document.getElementById("dash19").style.setProperty("background-color", "red");
-        document.getElementById("dash20").style.setProperty("background-color", "red");
-    }
-
-    else if (fifthValue === "1000") {
-        document.getElementById("dash17").style.setProperty("background-color", "red");
-        document.getElementById("dash18").style.setProperty("background-color", "gray");
-        document.getElementById("dash19").style.setProperty("background-color", "gray");
-        document.getElementById("dash20").style.setProperty("background-color", "gray");
-    }
-
-    else if (fifthValue === "1001") {
-        document.getElementById("dash17").style.setProperty("background-color", "red");
-        document.getElementById("dash18").style.setProperty("background-color", "gray");
-        document.getElementById("dash19").style.setProperty("background-color", "gray");
-        document.getElementById("dash20").style.setProperty("background-color", "red");
-    };
-
+}
 
         convertToBinary(seconds[1]);
         sixthValue = value;
-        if (sixthValue === "0000") {
-        document.getElementById("dash21").style.setProperty("background-color", "gray");
-        document.getElementById("dash22").style.setProperty("background-color", "gray");
-        document.getElementById("dash23").style.setProperty("background-color", "gray");
-        document.getElementById("dash24").style.setProperty("background-color", "gray");
-      }
-       else if (sixthValue === "0001") {      
-        document.getElementById("dash21").style.setProperty("background-color", "gray");
-        document.getElementById("dash22").style.setProperty("background-color", "gray");
-        document.getElementById("dash23").style.setProperty("background-color", "gray");
-        document.getElementById("dash24").style.setProperty("background-color", "red");
-      } 
-      else if (sixthValue === "0010") {       
-        document.getElementById("dash21").style.setProperty("background-color", "gray");
-        document.getElementById("dash22").style.setProperty("background-color", "gray");
-        document.getElementById("dash23").style.setProperty("background-color", "red");
-        document.getElementById("dash24").style.setProperty("background-color", "gray");
-      } 
-      else if (sixthValue === "0011") {  
-        document.getElementById("dash21").style.setProperty("background-color", "gray");
-        document.getElementById("dash22").style.setProperty("background-color", "gray");
-        document.getElementById("dash23").style.setProperty("background-color", "red");
-        document.getElementById("dash24").style.setProperty("background-color", "red");     
+
+        if (colorMapping.hasOwnProperty(sixthValue)) {
+    var colors = colorMapping[sixthValue];
+    for (var i = 0; i < 4; i++) {
+        document.getElementById("dash" + (21 + i)).style.setProperty("background-color", colors[i]);
         
-      } else if (sixthValue === "0100") {
-        document.getElementById("dash21").style.setProperty("background-color", "gray");
-        document.getElementById("dash22").style.setProperty("background-color", "red");
-        document.getElementById("dash23").style.setProperty("background-color", "gray");
-        document.getElementById("dash24").style.setProperty("background-color", "gray");
-    }
-    else if (sixthValue === "0101") {
-        document.getElementById("dash21").style.setProperty("background-color", "gray");
-        document.getElementById("dash22").style.setProperty("background-color", "red");
-        document.getElementById("dash23").style.setProperty("background-color", "gray");
-        document.getElementById("dash24").style.setProperty("background-color", "red");
-    }
-    else if (sixthValue === "0110") {
-        document.getElementById("dash21").style.setProperty("background-color", "gray");
-        document.getElementById("dash22").style.setProperty("background-color", "red");
-        document.getElementById("dash23").style.setProperty("background-color", "red");
-        document.getElementById("dash24").style.setProperty("background-color", "gray");
-    }
-    else if (sixthValue === "0111") {
-        document.getElementById("dash21").style.setProperty("background-color", "gray");
-        document.getElementById("dash22").style.setProperty("background-color", "red");
-        document.getElementById("dash23").style.setProperty("background-color", "red");
-        document.getElementById("dash24").style.setProperty("background-color", "red");
-    }
+      }
+   }
 
-    else if (sixthValue === "1000") {
-        document.getElementById("dash21").style.setProperty("background-color", "red");
-        document.getElementById("dash22").style.setProperty("background-color", "gray");
-        document.getElementById("dash23").style.setProperty("background-color", "gray");
-        document.getElementById("dash24").style.setProperty("background-color", "gray");
-    }
-
-    else if (sixthValue === "1001") {
-        document.getElementById("dash21").style.setProperty("background-color", "red");
-        document.getElementById("dash22").style.setProperty("background-color", "gray");
-        document.getElementById("dash23").style.setProperty("background-color", "gray");
-        document.getElementById("dash24").style.setProperty("background-color", "red");
-    };
-
-      
+ 
      
       convertToBinary(hours[0]);
       firstValue = value;
-      if (firstValue === "0000") {
-        document.getElementById("dash4").style.setProperty("background-color", "gray");
-        document.getElementById("dash4").style.setProperty("background-color", "gray");
-        document.getElementById("dash4").style.setProperty("background-color", "gray");
-        document.getElementById("dash4").style.setProperty("background-color", "gray");
-      }
-       else if (firstValue === "0001") {      
-        document.getElementById("dash1").style.setProperty("background-color", "gray");
-        document.getElementById("dash2").style.setProperty("background-color", "gray");
-        document.getElementById("dash3").style.setProperty("background-color", "gray");
-        document.getElementById("dash4").style.setProperty("background-color", "red");
-      } 
-      else if (firstValue === "0010") {       
-        document.getElementById("dash1").style.setProperty("background-color", "gray");
-        document.getElementById("dash2").style.setProperty("background-color", "gray");
-        document.getElementById("dash3").style.setProperty("background-color", "red");
-        document.getElementById("dash4").style.setProperty("background-color", "gray");
-      } 
-      else if (firstValue === "0011") {  
-        document.getElementById("dash1").style.setProperty("background-color", "gray");
-        document.getElementById("dash2").style.setProperty("background-color", "gray");
-        document.getElementById("dash3").style.setProperty("background-color", "red");
-        document.getElementById("dash4").style.setProperty("background-color", "red");     
+      if (colorMapping.hasOwnProperty(firstValue)) {
+    var colors = colorMapping[firstValue];
+    for (var i = 0; i < 4; i++) {
+        document.getElementById("dash" + (1 + i)).style.setProperty("background-color", colors[i]);
         
-      } else if (firstValue === "0100") {
-        document.getElementById("dash1").style.setProperty("background-color", "gray");
-        document.getElementById("dash2").style.setProperty("background-color", "red");
-        document.getElementById("dash3").style.setProperty("background-color", "gray");
-        document.getElementById("dash4").style.setProperty("background-color", "gray");
-    }
-    else if (firstValue === "0101") {
-        document.getElementById("dash1").style.setProperty("background-color", "gray");
-        document.getElementById("dash2").style.setProperty("background-color", "red");
-        document.getElementById("dash3").style.setProperty("background-color", "gray");
-        document.getElementById("dash4").style.setProperty("background-color", "red");
-    }
-    else if (firstValue === "0110") {
-        document.getElementById("dash1").style.setProperty("background-color", "gray");
-        document.getElementById("dash2").style.setProperty("background-color", "red");
-        document.getElementById("dash3").style.setProperty("background-color", "red");
-        document.getElementById("dash4").style.setProperty("background-color", "gray");
-    }
-    else if (firstValue === "0111") {
-        document.getElementById("dash1").style.setProperty("background-color", "gray");
-        document.getElementById("dash2").style.setProperty("background-color", "red");
-        document.getElementById("dash3").style.setProperty("background-color", "red");
-        document.getElementById("dash4").style.setProperty("background-color", "red");
-    }
+      }
+   }
 
-    else if (firstValue === "1000") {
-        document.getElementById("dash1").style.setProperty("background-color", "red");
-        document.getElementById("dash2").style.setProperty("background-color", "gray");
-        document.getElementById("dash3").style.setProperty("background-color", "gray");
-        document.getElementById("dash4").style.setProperty("background-color", "gray");
-    }
-
-    else if (firstValue === "1001") {
-        document.getElementById("dash1").style.setProperty("background-color", "red");
-        document.getElementById("dash2").style.setProperty("background-color", "gray");
-        document.getElementById("dash3").style.setProperty("background-color", "gray");
-        document.getElementById("dash4").style.setProperty("background-color", "red");
-    };
-
+   
       convertToBinary(hours[1]);
       secondValue = value;
-      if (secondValue === "0000") {
-        document.getElementById("dash5").style.setProperty("background-color", "gray");
-        document.getElementById("dash6").style.setProperty("background-color", "gray");
-        document.getElementById("dash7").style.setProperty("background-color", "gray");
-        document.getElementById("dash8").style.setProperty("background-color", "gray");
-      } 
-       else if (secondValue === "0001") {
-        document.getElementById("dash5").style.setProperty("background-color", "gray");
-        document.getElementById("dash6").style.setProperty("background-color", "gray");
-        document.getElementById("dash7").style.setProperty("background-color", "gray");
-        document.getElementById("dash8").style.setProperty("background-color", "red");
-      } 
-      else if (secondValue === "0010") {
-        document.getElementById("dash5").style.setProperty("background-color", "gray");
-        document.getElementById("dash6").style.setProperty("background-color", "gray");
-        document.getElementById("dash7").style.setProperty("background-color", "red");
-        document.getElementById("dash8").style.setProperty("background-color", "gray");
-      } 
-      else if (secondValue === "0011") {       
-        document.getElementById("dash5").style.setProperty("background-color", "gray");
-        document.getElementById("dash6").style.setProperty("background-color", "gray");
-        document.getElementById("dash7").style.setProperty("background-color", "red");
-        document.getElementById("dash8").style.setProperty("background-color", "red");
+      if (colorMapping.hasOwnProperty(secondValue)) {
+    var colors = colorMapping[secondValue];
+    for (var i = 0; i < 4; i++) {
+        document.getElementById("dash" + (5 + i)).style.setProperty("background-color", colors[i]);
+        
       }
-      else if (secondValue === "0100") {       
-        document.getElementById("dash5").style.setProperty("background-color", "gray");
-        document.getElementById("dash6").style.setProperty("background-color", "red");
-        document.getElementById("dash7").style.setProperty("background-color", "gray");
-        document.getElementById("dash8").style.setProperty("background-color", "gray");
-       
-      }
-       else if (secondValue === "0101") {
-        document.getElementById("dash5").style.setProperty("background-color", "gray");
-        document.getElementById("dash6").style.setProperty("background-color", "red");       
-        document.getElementById("dash7").style.setProperty("background-color", "gray");
-        document.getElementById("dash8").style.setProperty("background-color", "red");
-      }
-      else if (secondValue === "0110") {
-        document.getElementById("dash5").style.setProperty("background-color", "gray");
-        document.getElementById("dash6").style.setProperty("background-color", "red");       
-        document.getElementById("dash7").style.setProperty("background-color", "red");
-        document.getElementById("dash8").style.setProperty("background-color", "gray");
-      }
-      else if (secondValue === "0111") {
-        document.getElementById("dash5").style.setProperty("background-color", "gray");
-        document.getElementById("dash6").style.setProperty("background-color", "red");       
-        document.getElementById("dash7").style.setProperty("background-color", "red");
-        document.getElementById("dash8").style.setProperty("background-color", "red");
-      }
-      else if (secondValue === "1000") {
-        document.getElementById("dash5").style.setProperty("background-color", "red");
-        document.getElementById("dash6").style.setProperty("background-color", "gray");       
-        document.getElementById("dash7").style.setProperty("background-color", "gray");
-        document.getElementById("dash8").style.setProperty("background-color", "gray");
-      }
-      else if (secondValue === "1001") {
-        document.getElementById("dash5").style.setProperty("background-color", "red");
-        document.getElementById("dash6").style.setProperty("background-color", "gray");       
-        document.getElementById("dash7").style.setProperty("background-color", "gray");
-        document.getElementById("dash8").style.setProperty("background-color", "red");
-      }
-      
-      
-      
-      
-      
-      
+   }
 
       convertToBinary(minutes[0]);
       thirdValue = value;
-
-      if (thirdValue === "0000") {
-        document.getElementById("dash9").style.setProperty("background-color", "gray");
-        document.getElementById("dash10").style.setProperty("background-color", "gray");
-        document.getElementById("dash11").style.setProperty("background-color", "gray");
-        document.getElementById("dash12").style.setProperty("background-color", "gray");
-
-      } 
-     else if (thirdValue === "0001") {
-        document.getElementById("dash9").style.setProperty("background-color", "gray");
-        document.getElementById("dash10").style.setProperty("background-color", "gray");
-        document.getElementById("dash11").style.setProperty("background-color", "gray");
-        document.getElementById("dash12").style.setProperty("background-color", "red");
-
+      if (colorMapping.hasOwnProperty(thirdValue)) {
+    var colors = colorMapping[thirdValue];
+    for (var i = 0; i < 4; i++) {
+        document.getElementById("dash" + (9 + i)).style.setProperty("background-color", colors[i]);
+        
       }
-      else if (thirdValue === "0010") {
-        document.getElementById("dash9").style.setProperty("background-color", "gray");
-        document.getElementById("dash10").style.setProperty("background-color", "gray");
-        document.getElementById("dash11").style.setProperty("background-color", "red");
-        document.getElementById("dash12").style.setProperty("background-color", "gray");
+   }
 
-      }
-      else if (thirdValue === "0011") {
-        document.getElementById("dash9").style.setProperty("background-color", "gray");
-        document.getElementById("dash10").style.setProperty("background-color", "gray");
-        document.getElementById("dash11").style.setProperty("background-color", "red");
-        document.getElementById("dash12").style.setProperty("background-color", "red");
 
-      }
-      else if (thirdValue === "0100") {
-        document.getElementById("dash9").style.setProperty("background-color", "gray");
-        document.getElementById("dash10").style.setProperty("background-color", "red");
-        document.getElementById("dash11").style.setProperty("background-color", "gray");
-        document.getElementById("dash12").style.setProperty("background-color", "gray");
-
-      }
-      else if (thirdValue === "0101") {
-        document.getElementById("dash9").style.setProperty("background-color", "gray");
-        document.getElementById("dash10").style.setProperty("background-color", "red");
-        document.getElementById("dash11").style.setProperty("background-color", "gray");
-        document.getElementById("dash12").style.setProperty("background-color", "red");
-
-      }
-    
-       
-      else if (thirdValue === "0110") {
-        document.getElementById("dash9").style.setProperty("background-color", "gray");
-        document.getElementById("dash10").style.setProperty("background-color", "red");
-        document.getElementById("dash11").style.setProperty("background-color", "red");
-        document.getElementById("dash12").style.setProperty("background-color", "gray");
-
-      }
-      else if (thirdValue === "0111") {
-        document.getElementById("dash9").style.setProperty("background-color", "gray");
-        document.getElementById("dash10").style.setProperty("background-color", "red");
-        document.getElementById("dash11").style.setProperty("background-color", "red");
-        document.getElementById("dash12").style.setProperty("background-color", "red");
-
-      }
-      else if (thirdValue === "1000") {
-        document.getElementById("dash9").style.setProperty("background-color", "red");
-        document.getElementById("dash10").style.setProperty("background-color", "gray");
-        document.getElementById("dash11").style.setProperty("background-color", "gray");
-        document.getElementById("dash12").style.setProperty("background-color", "gray");
-
-      }
-      else if (thirdValue === "1001") {
-        document.getElementById("dash9").style.setProperty("background-color", "red");
-        document.getElementById("dash10").style.setProperty("background-color", "gray");
-        document.getElementById("dash11").style.setProperty("background-color", "gray");
-        document.getElementById("dash12").style.setProperty("background-color", "red");
-
-      } 
 
       convertToBinary(minutes[1]);
       fourthValue = value;
-      if (fourthValue === "0000") {       
-        document.getElementById("dash13").style.setProperty("background-color", "gray");
-        document.getElementById("dash14").style.setProperty("background-color", "gray");
-        document.getElementById("dash15").style.setProperty("background-color", "gray");
-        document.getElementById("dash16").style.setProperty("background-color", "gray");
+      if (colorMapping.hasOwnProperty(fourthValue)) {
+    var colors = colorMapping[fourthValue];
+    for (var i = 0; i < 4; i++) {
+        document.getElementById("dash" + (13 + i)).style.setProperty("background-color", colors[i]);
+        
       }
-        else if (fourthValue === "0001") {       
-        document.getElementById("dash13").style.setProperty("background-color", "gray");
-        document.getElementById("dash14").style.setProperty("background-color", "gray");
-        document.getElementById("dash15").style.setProperty("background-color", "gray");
-        document.getElementById("dash16").style.setProperty("background-color", "red");
-       }
-        else if (fourthValue === "0010") {  
-        document.getElementById("dash13").style.setProperty("background-color", "gray");
-        document.getElementById("dash14").style.setProperty("background-color", "gray");    
-        document.getElementById("dash15").style.setProperty("background-color", "red");
-        document.getElementById("dash16").style.setProperty("background-color", "gray");
-       }
-        else if (fourthValue === "0011") { 
-        document.getElementById("dash13").style.setProperty("background-color", "gray");
-        document.getElementById("dash14").style.setProperty("background-color", "gray");     
-        document.getElementById("dash15").style.setProperty("background-color", "red");
-        document.getElementById("dash16").style.setProperty("background-color", "red");
-       }
-        else if (fourthValue === "0100") { 
-        document.getElementById("dash13").style.setProperty("background-color", "gray");      
-        document.getElementById("dash14").style.setProperty("background-color", "red");
-        document.getElementById("dash15").style.setProperty("background-color", "gray");
-        document.getElementById("dash16").style.setProperty("background-color", "gray");
-       } 
-       else if (fourthValue === "0101") {
-        document.getElementById("dash13").style.setProperty("background-color", "gray");          
-        document.getElementById("dash14").style.setProperty("background-color", "red");
-        document.getElementById("dash15").style.setProperty("background-color", "gray");   
-        document.getElementById("dash16").style.setProperty("background-color", "red");
-       }
-       else if (fourthValue === "0110") { 
-        document.getElementById("dash13").style.setProperty("background-color", "gray");     
-        document.getElementById("dash14").style.setProperty("background-color", "red");
-        document.getElementById("dash15").style.setProperty("background-color", "red");
-        document.getElementById("dash16").style.setProperty("background-color", "gray");
-       }  
-       else if (fourthValue === "0111") { 
-        document.getElementById("dash13").style.setProperty("background-color", "gray");      
-        document.getElementById("dash14").style.setProperty("background-color", "red");
-        document.getElementById("dash15").style.setProperty("background-color", "red");
-        document.getElementById("dash16").style.setProperty("background-color", "red");
-       }
-       else if (fourthValue === "1000") {       
-        document.getElementById("dash13").style.setProperty("background-color", "red");
-        document.getElementById("dash14").style.setProperty("background-color", "gray");
-        document.getElementById("dash15").style.setProperty("background-color", "gray");
-        document.getElementById("dash16").style.setProperty("background-color", "gray");
-       }
-       else if (fourthValue === "1001") {       
-        document.getElementById("dash13").style.setProperty("background-color", "red");
-        document.getElementById("dash14").style.setProperty("background-color", "gray");
-        document.getElementById("dash15").style.setProperty("background-color", "gray");
-        document.getElementById("dash16").style.setProperty("background-color", "red");
-       }
+   }
+
 
      let secondsTime = seconds;
 
