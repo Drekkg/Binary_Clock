@@ -136,31 +136,35 @@
         return hours, minutes, seconds;
       }
 
-      function convertToBinary(num) {
-        if (num === "0") {
-          value = "0000";
-        } else if (num === "1") {
-          value = "0001";
-        } else if (num === "2") {
-          value = "0010";
-        } else if (num === "3") {
-          value = "0011";
+      // function convertToBinary(num) {
+      //   if (num === "0") {
+      //     value = "0000";
+      //   } else if (num === "1") {
+      //     value = "0001";
+      //   } else if (num === "2") {
+      //     value = "0010";
+      //   } else if (num === "3") {
+      //     value = "0011";
           
-        } else if (num === "4") {
-          value = "0100";
-        } else if (num === "5") {
-          value = "0101";
+      //   } else if (num === "4") {
+      //     value = "0100";
+      //   } else if (num === "5") {
+      //     value = "0101";
           
-        } else if (num === "6") {
-          value = "0110";
-        } else if (num === "7") {
-          value = "0111";
-        } else if (num === "8") {
-          value = "1000";
-        } else if (num === "9") {
-          value = "1001";
-        }
-        return value;
+      //   } else if (num === "6") {
+      //     value = "0110";
+      //   } else if (num === "7") {
+      //     value = "0111";
+      //   } else if (num === "8") {
+      //     value = "1000";
+      //   } else if (num === "9") {
+      //     value = "1001";
+      //   }
+      // return value;
+      // }
+      function convertToBinary(num){
+        var binArray = ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001"];
+        value = binArray[num];
       }
 
       getTime();
