@@ -87,19 +87,6 @@
               </p></div>
               </div>
               </body>
-    
-  
-    
-
-
-
-
-
-
-
-
-
-
 
     <script>
       function binaryTime() {
@@ -158,71 +145,63 @@
     // Add more mappings as needed
 };
     
-        convertToBinary(seconds[0]);
+ convertToBinary(seconds[0]);
         fifthValue = value;
-        if (colorMapping.hasOwnProperty(fifthValue)) {
     var colors = colorMapping[fifthValue];
     for (var i = 0; i < 4; i++) {
         document.getElementById("dash" + (17 + i)).style.setProperty("background-color", colors[i]);
         
-    }
+    
 }
 
         convertToBinary(seconds[1]);
         sixthValue = value;
-
-        if (colorMapping.hasOwnProperty(sixthValue)) {
     var colors = colorMapping[sixthValue];
     for (var i = 0; i < 4; i++) {
         document.getElementById("dash" + (21 + i)).style.setProperty("background-color", colors[i]);
         
       }
-   }
+   
 
  
      
       convertToBinary(hours[0]);
       firstValue = value;
-      if (colorMapping.hasOwnProperty(firstValue)) {
     var colors = colorMapping[firstValue];
     for (var i = 0; i < 4; i++) {
         document.getElementById("dash" + (1 + i)).style.setProperty("background-color", colors[i]);
         
       }
-   }
+   
 
    
       convertToBinary(hours[1]);
       secondValue = value;
-      if (colorMapping.hasOwnProperty(secondValue)) {
     var colors = colorMapping[secondValue];
     for (var i = 0; i < 4; i++) {
         document.getElementById("dash" + (5 + i)).style.setProperty("background-color", colors[i]);
         
       }
-   }
 
       convertToBinary(minutes[0]);
-      thirdValue = value;
-      if (colorMapping.hasOwnProperty(thirdValue)) {
+      thirdValue = value; 
     var colors = colorMapping[thirdValue];
     for (var i = 0; i < 4; i++) {
         document.getElementById("dash" + (9 + i)).style.setProperty("background-color", colors[i]);
         
       }
-   }
+   
 
 
 
       convertToBinary(minutes[1]);
       fourthValue = value;
-      if (colorMapping.hasOwnProperty(fourthValue)) {
     var colors = colorMapping[fourthValue];
     for (var i = 0; i < 4; i++) {
         document.getElementById("dash" + (13 + i)).style.setProperty("background-color", colors[i]);
         
       }
-   }
+   
 
 
      let secondsTime = seconds;
